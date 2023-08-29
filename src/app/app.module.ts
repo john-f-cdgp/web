@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { QRCodeModule } from 'angular2-qrcode';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatButtonModule,
+    QRCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,6 +10,7 @@ import * as shajs from 'sha.js';
   styleUrls: ['./certificate-validation.component.sass'],
 })
 export class CertificateValidationComponent implements OnInit {
+  public url: string = '';
   public name: string = '';
   public birthDate: Date = new Date();
   public isActiveMember: boolean = false;
@@ -21,6 +22,7 @@ export class CertificateValidationComponent implements OnInit {
 
   ngOnInit(): void {
     let validationValuePlainText: string = '';
+    this.url = window.location.href;
 
     this.route.queryParams.forEach((param) => {
       if (param.hasOwnProperty('member'))
@@ -63,9 +65,14 @@ export class CertificateValidationComponent implements OnInit {
       this.isValidRequest =
         this.name.includes(' ') && !isNaN(this.birthDate.getFullYear());
 
-      this.isActiveMember = this.checkValidity(
-        `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${name}`
-      );
+      const person = `${date.getFullYear()}-${(date.getMonth() + 1)
+        .toString()
+        .padStart(2, '0')}-${date
+        .getDate()
+        .toString()
+        .padStart(2, '0')}_${name}`;
+      this.url = `https://dödel.club/v?member=${person}`;
+      this.isActiveMember = this.checkValidity(person);
     }
   }
 

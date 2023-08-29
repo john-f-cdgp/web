@@ -40,6 +40,8 @@
       >Dieses Zertifkat ist nur in Verbindung mit einem amtlichen
       Lichtbildausweis gültig.</span
     >
+    <br /><br /><br />
+    <qr-code [value]="url"></qr-code>
   </div>
 
   <div *ngIf="isValidRequest && !isActiveMember" class="certificate">
