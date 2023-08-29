@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Member } from 'src/app/member';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import * as shajs from 'sha.js';
 
 @Component({
@@ -15,7 +15,7 @@ export class CertificateValidationComponent implements OnInit {
   public isActiveMember: boolean = false;
   public isValidRequest: boolean = false;
   public memberState: string = '';
-  userName = new FormControl('', [Validators.required, Validators.email]);
+  userName = new FormControl('', [Validators.required]);
 
   constructor(private route: ActivatedRoute) {}
 
@@ -53,11 +53,21 @@ export class CertificateValidationComponent implements OnInit {
     return true;
   }
 
-  getErrorMessage() {
-    if (this.userName.hasError('required')) {
-      return 'You must enter a value';
-    }
+  login() {
+    if (this.form.valid) {
+      const name = this.form.get('name')?.value.replaceAll(' ', '_');
+      const date = new Date(this.form.get('date')?.value);
 
-    return this.userName.hasError('email') ? ' Name: (min 1 leerzeichen):' : '';
+      window.location.assign(
+        `https://dödel.club/v?member=${date.getFullYear()}-${
+          date.getMonth() + 1
+        }-${date.getDate()}_${name}`
+      );
+    }
   }
+
+  form = new FormGroup({
+    name: new FormControl(''),
+    date: new FormControl(''),
+  });
 }

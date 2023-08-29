@@ -1,29 +1,39 @@
 <div id="content">
   <div *ngIf="!isValidRequest">
-    <!-- Willkommen beim Penis-Checker! Hier kann geprüft werden, ob jemand im Club
-    ist
-    <mat-form-field appearance="fill">
-      <mat-label>Name eingeben</mat-label>
-      <input
-        matInput
-        placeholder="John F. Clubdergroßenpenisse"
-        [formControl]="userName"
-        required
-      />
-      <mat-error *ngIf="userName.invalid">{{ getErrorMessage() }}</mat-error>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-      <mat-label>Geburtsdatum</mat-label>
-      <input matInput [matDatepicker]="picker" />
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <button mat-raised-button type="submit" color="primary">LOGIN</button> -->
+    <h1>
+      Willkommen beim Penis-Checker! Hier kann geprüft werden, ob jemand im Club
+      ist
+    </h1>
+
+    <form class="example-form" [formGroup]="form" (ngSubmit)="login()">
+      <mat-form-field class="example-full-width">
+        <mat-label>Name eingeben</mat-label>
+        <input
+          matInput
+          placeholder="John F. Clubdergroßenpenisse"
+          formControlName="name"
+          required
+        />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Geburtsdatum</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="date"
+          required
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button mat-button type="submit" color="primary">Login</button>
+    </form>
   </div>
 
   <div *ngIf="isValidRequest && isActiveMember" class="certificate">
-    <h2>{{ name }}, geboren am {{ birthDate | date: "dd.MM.yyyy" }}</h2>
+    <h2>{{ name }}, geboren am {{ birthDate | date : "dd.MM.yyyy" }}</h2>
     <h1>hat einen sehr großen Penis und genau zwei Hoden.</h1>
     <h2>{{ name }} ist {{ memberState }} im Club der großen Penisse.</h2>
     <span
@@ -33,7 +43,7 @@
   </div>
 
   <div *ngIf="isValidRequest && !isActiveMember" class="certificate">
-    <h2>{{ name }}, geboren am {{ birthDate | date: "dd.MM.yyyy" }}</h2>
+    <h2>{{ name }}, geboren am {{ birthDate | date : "dd.MM.yyyy" }}</h2>
     <h1><u>hat keinen großen Penis.</u></h1>
   </div>
 </div>
