@@ -58,10 +58,13 @@ export class CertificateValidationComponent implements OnInit {
       const name = this.form.get('name')?.value.replaceAll(' ', '_');
       const date = new Date(this.form.get('date')?.value);
 
-      window.location.assign(
-        `https://dödel.club/v?member=${date.getFullYear()}-${
-          (date.getMonth() + 1).toString().padStart(2, '0')
-        }-${date.getDate().toString().padStart(2, '0')}_${name}`
+      this.name = this.form.get('name')?.value;
+      this.birthDate = date;
+      this.isValidRequest =
+        this.name.includes(' ') && !isNaN(this.birthDate.getFullYear());
+
+      this.isActiveMember = this.checkValidity(
+        `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}_${name}`
       );
     }
   }
