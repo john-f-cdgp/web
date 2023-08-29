@@ -60,8 +60,8 @@ export class CertificateValidationComponent implements OnInit {
 
       window.location.assign(
         `https://dödel.club/v?member=${date.getFullYear()}-${
-          date.getMonth() + 1
-        }-${date.getDate()}_${name}`
+          (date.getMonth() + 1).toString().padStart(2, '0')
+        }-${date.getDate().toString().padStart(2, '0')}_${name}`
       );
     }
   }
