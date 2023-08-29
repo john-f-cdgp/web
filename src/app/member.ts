@@ -2,12 +2,18 @@ export class Member {
   public static elder = [
     '16e9c1ffb6604706dca7fd569ddb5e1f6587b6e2256eb69bd955dfb53639cf14',
     '1e2dd74bc4d4e7379b0c6a59b78372a6fbe814c8369c01da73cf5944fe3f2b59',
-    '',
+    '9ecfeb8f437b1bf8e4eb984ee259a0ad79695d709e08ac3757dc48402b0506a4',
   ];
   public static member = [
     'c9b82dee891fc22ddde7a8a59be7f1ae9a3999dd7b5fcdf046aeffa91bc2a9a4',
-    '',
-    '',
+    '89c28cc56575463bf5f4e6df3065d6d3613802090ec6c76e8d0ef281ae8958cd',
+    '783f8a891eb639575c80e0c496997eca782971ad4e7e5512b47159fa6389ce5a',
+    'b261b5026e5ac98b3ee792e6bca24da22e5486117e3e0ba1fa14c11e906756a9',
+    'fedcfa75db4724b75af59a6355fd46318094f8e1d98181f61882cd2a0488ffe3',
+    '69f557959a855a764d304da51f7ac62749937d9499e1fe4bdc4ee3b25d0bdf18',
+    '8c765245ab54f7e3f16f154a6e7c6d6d4c00bef8f5a51e1a6b621e03caaf6075',
+    'f9182f64b249f17a8e9c8a7304011a60bce8efeffc7f93552aee02a62b7bdcae',
   ];
-  public static junior = '';
+  public static junior =
+    '8f3ad8e59b02aabe6f72af5c7a0fac33675050fd7301f02089fb78e67de2294e';
 }
