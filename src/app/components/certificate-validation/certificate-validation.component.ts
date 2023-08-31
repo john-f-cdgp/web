@@ -71,7 +71,7 @@ export class CertificateValidationComponent implements OnInit {
         .getDate()
         .toString()
         .padStart(2, '0')}_${name}`;
-      this.url = `https://dödel.club/v?member=${person}`;
+      this.url = `https://xn--ddel-5qa.club/v?member=${person}`;
       this.isActiveMember = this.checkValidity(person);
     }
   }
