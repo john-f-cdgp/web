@@ -14,7 +14,8 @@ export class Member {
     '8c765245ab54f7e3f16f154a6e7c6d6d4c00bef8f5a51e1a6b621e03caaf6075',
     '8efa9b237a57fba8ede506eb14a8e6e0ca3636eea68a1ecccae54e076772b84e',
     '8f3ad8e59b02aabe6f72af5c7a0fac33675050fd7301f02089fb78e67de2294e',
+    '47cf90fdc96588fbbae8097a596e27eacc4574fd787f7ddba4118011981fb8af',
   ];
   public static junior =
-    '47cf90fdc96588fbbae8097a596e27eacc4574fd787f7ddba4118011981fb8af';
+    'b78dbc1234d93f86d6d6d9ca49158f75fa0ba60cf371bfc78bd0d0e7480c9043';
 }
